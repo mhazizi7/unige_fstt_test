@@ -17,9 +17,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -27,10 +25,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
-    
+        cache: maven   
     -uses:  browser-action/setup-chorome@latest
     -run: chrome --version
-    
     - name: Build with Maven
       run: mvn -B clean test
